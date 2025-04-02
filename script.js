@@ -1,20 +1,21 @@
 function minDate(dates) {
   //write you code here
    for(let i=0;i<dates.length;i++){
-	   dates[i].split('/').map(Number)
+	   dates[i]=dates[i].split('/').map(Number)
    }
-   dates.sort((a,b)=>a[0]-b[0]|| a[1] - b[1] || a[2] - b[2])
-}
-let year=String(dates[0])
-let month=String(dates[1])
-let date=String(dates[2])
+dates.sort((a,b)=>a[0]-b[0]|| a[1] - b[1] || a[2] - b[2])
+
+let year=String(dates[0][0])
+let month=String(dates[0][1])
+let date=String(dates[0][2])
 if(month.length===1){
 	month='0'+month
 }
-if(dates.length===1){
+if(date.length===1){
 	date='0'+date
 }
 return year+'/'+month+'/'+date
+}	
 // Do not change the code
 
 var dates = [
